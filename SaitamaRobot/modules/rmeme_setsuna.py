@@ -129,7 +129,7 @@ __help__ = """
 
 """ 
 R_HANDLER = CommandHandler("rmeme", rmemes)
-COS_HANDLER = CommandHandler(r"r.*", cosplay)
+COS_HANDLER = CommandHandler(r"r.*", anyy)
 dispatcher.add_handler(R_HANDLER)
 dispatcher.add_handler(COS_HANDLER)
 
