@@ -87,7 +87,7 @@ def anyy(update, context):
       sub = msg.text.split(" ", 1)[1]
     except IndexError:
       sub = msg.text[2:]
-    if sub = " ": 
+    if sub == " ": 
       return msg.reply_text("What to scrape for?")
     subreddit = random.choice(SUBREDS)
     res = r.get(f"https://meme-api.herokuapp.com/gimme/{sub}")
