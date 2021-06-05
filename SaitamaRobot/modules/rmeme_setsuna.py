@@ -79,18 +79,18 @@ def rmemes(update, context):
         return msg.reply_text(f"Error! {excp.message}")
 
 @run_async
-def cosplay(update, context):
+def anyy(update, context):
     msg = update.effective_message
     chat = update.effective_chat
     context.bot.send_chat_action(chat.id, action="upload_photo")
-
-    SUBREDS = [
-        "NSFWcosplay",
-        "echhi", 
-    ]
-
+    try:
+      sub = msg.text.split(" ", 1)[1]
+    except IndexError:
+      sub = msg.text[2:]
+    if sub = " ": 
+      return msg.reply_text("What to scrape for?")
     subreddit = random.choice(SUBREDS)
-    res = r.get(f"https://meme-api.herokuapp.com/gimme/{subreddit}")
+    res = r.get(f"https://meme-api.herokuapp.com/gimme/{sub}")
 
     if res.status_code != 200:  # Like if api is down?
         msg.reply_text("Sorry some error occurred :(, possibly api is down")
@@ -129,7 +129,7 @@ __help__ = """
 
 """ 
 R_HANDLER = CommandHandler("rmeme", rmemes)
-COS_HANDLER = CommandHandler("rnsfw", cosplay)
+COS_HANDLER = CommandHandler(r"r.*", cosplay)
 dispatcher.add_handler(R_HANDLER)
 dispatcher.add_handler(COS_HANDLER)
 
