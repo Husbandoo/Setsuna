@@ -86,7 +86,7 @@ def anyy(update, context):
     try:
       sub = msg.text.split(" ", 1)[1]
     except IndexError:
-      sub = msg.text[2:]
+      sub = msg.text[3:]
     if sub == " ": 
       return msg.reply_text("What to scrape for?") 
     print(sub)
