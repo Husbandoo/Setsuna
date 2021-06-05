@@ -77,15 +77,60 @@ def rmemes(update, context):
 
     except BadRequest as excp:
         return msg.reply_text(f"Error! {excp.message}")
+
+@run_async
+def cosplay(update, context):
+    msg = update.effective_message
+    chat = update.effective_chat
+    context.bot.send_chat_action(chat.id, action="upload_photo")
+
+    SUBREDS = [
+        "NSFWcosplay",
+        "echhi", 
+    ]
+
+    subreddit = random.choice(SUBREDS)
+    res = r.get(f"https://meme-api.herokuapp.com/gimme/{subreddit}")
+
+    if res.status_code != 200:  # Like if api is down?
+        msg.reply_text("Sorry some error occurred :(, possibly api is down")
+        return
+    else:
+        res = res.json()
+
+    rpage = res.get(str("subreddit"))  # Subreddit
+    title = res.get(str("title"))  # Post title
+    memeu = res.get(str("url"))  # meme pic url
+    plink = res.get(str("postLink"))
+
+    caps = f"× <b>Title</b>: {title}\n"
+    caps += f"× <b>Subreddit:</b> <pre>r/{rpage}</pre>"
+
+    keyb = [[InlineKeyboardButton(text="Postlink 🔗", url=plink)]]
+    try:
+        context.bot.send_photo(
+            chat.id,
+            photo=memeu,
+            caption=(caps),
+            reply_markup=InlineKeyboardMarkup(keyb),
+            timeout=60,
+            parse_mode=ParseMode.HTML,
+        )
+
+    except BadRequest as excp:
+        return msg.reply_text(f"Error! {excp.message}")
        
 
 __help__ = """
 ***Rmeme Module**
 
 `/rmeme`: Try it urself baka! 
+`/rnsfw`: Dangerous!! 
 
 """ 
 R_HANDLER = CommandHandler("rmeme", rmemes)
+COS_HANDLER = CommandHandler("rnsfw", cosplay)
 dispatcher.add_handler(R_HANDLER)
+dispatcher.add_handler(COS_HANDLER)
 
 __mod_name__ = "Rmeme"
