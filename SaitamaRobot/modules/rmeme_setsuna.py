@@ -91,9 +91,10 @@ def anyy(update, context):
       return msg.reply_text("What to scrape for?") 
     print(sub)
     res = r.get(f"https://meme-api.herokuapp.com/gimme/{sub}")
+    j = res.json()
 
     if res.status_code != 200:  # Like if api is down?
-        if res.status_code == 404:
+        if j.get(str('code')) == str(404):
           return msg.reply_text("Ahh f, this sub doesn't exist!!")
         msg.reply_text("Sorry some error occurred :(, possibly api is down")
         return
