@@ -93,6 +93,8 @@ def anyy(update, context):
     res = r.get(f"https://meme-api.herokuapp.com/gimme/{sub}")
 
     if res.status_code != 200:  # Like if api is down?
+        if res.status_code == 404:
+          return msg.reply_text("Ahh f, this sub doesn't exist!!")
         msg.reply_text("Sorry some error occurred :(, possibly api is down")
         return
     else:
@@ -129,8 +131,10 @@ __help__ = """
 
 """ 
 R_HANDLER = CommandHandler("rmeme", rmemes)
-COS_HANDLER = MessageHandler(Filters.regex(r'^/r(.*)'), anyy)
+DIS_HANDLER = CommandHandler("r", anyy)
+COS_HANDLER = MessageHandler(Filters.regex(r'^/r\/(.*)'), anyy)
 dispatcher.add_handler(R_HANDLER)
 dispatcher.add_handler(COS_HANDLER)
+dispatcher.add_handler(DIS_HANDLER)
 
 __mod_name__ = "Rmeme"
