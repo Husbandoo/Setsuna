@@ -9,7 +9,7 @@ import requests as r
 from SaitamaRobot import dispatcher 
 
 from telegram.error import BadRequest
-from telegram.ext import CommandHandler, Filters, run_async
+from telegram.ext import CommandHandler, Filters, run_async, MessageHandler 
 from telegram.utils.helpers import escape_markdown, mention_html
 from telegram import (
     Chat,
@@ -129,7 +129,7 @@ __help__ = """
 
 """ 
 R_HANDLER = CommandHandler("rmeme", rmemes)
-COS_HANDLER = CommandHandler(r"r.*", anyy)
+COS_HANDLER = MessageHandler(anyy, pattern = r'^/r.*')
 dispatcher.add_handler(R_HANDLER)
 dispatcher.add_handler(COS_HANDLER)
 
