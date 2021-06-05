@@ -88,8 +88,8 @@ def anyy(update, context):
     except IndexError:
       sub = msg.text[2:]
     if sub == " ": 
-      return msg.reply_text("What to scrape for?")
-    subreddit = random.choice(SUBREDS)
+      return msg.reply_text("What to scrape for?"
+    print(sub)
     res = r.get(f"https://meme-api.herokuapp.com/gimme/{sub}")
 
     if res.status_code != 200:  # Like if api is down?
