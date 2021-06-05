@@ -82,6 +82,7 @@ def rmemes(update, context):
 def anyy(update, context):
     msg = update.effective_message
     chat = update.effective_chat
+    
     context.bot.send_chat_action(chat.id, action="upload_photo")
     try:
       sub = msg.text.split(" ", 1)[1]
