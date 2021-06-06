@@ -5,6 +5,7 @@ import random2 as rdn
 import json
 import requests 
 from SaitamaRobot import dispatcher
+from SaitamaRobot import GIF_API
 from telegraph import upload_file as nyah
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup
 from telegram import ParseMode, Update
@@ -78,7 +79,9 @@ def gifufinder(update: Update, context: CallbackContext):
   msg = update.effective_message 
   chat = update.effective_chat 
   user = update.effective_user 
-  apikey = "K9Z3EL7WTG7R"  
+  apikey = str(GIF_API)
+  if apikey == "None": 
+    return msg.reply_text("Gif api not set!!")
   lmt = 30
   if args:
     search_term = args
