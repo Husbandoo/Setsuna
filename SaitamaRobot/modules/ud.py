@@ -10,7 +10,7 @@ def ud(update: Update, context: CallbackContext):
     message = update.effective_message
     text = message.text[len('/ud '):]
     if text == "simp":
-      message.reply_text("simp\n\nSomeone who puts the hoes before the bros, simps will do or say anything to please someone, particularly a girl, in the hopes that they will be in gain favor with that person.\n\n__Today adc was too peaceful, simp [_chirag_] was offline\n\nHeyy you know the [owner of adc], he's a big [simp]__", parse_mode = ParseMode.MARKDOWN)
+      message.reply_text("simp\n\nSomeone who puts the hoes before the bros, simps will do or say anything to please someone, particularly a girl, in the hopes that they will be in gain favor with that person.\n\n<i>Today adc was too peaceful, simp [_chirag_] was offline</i>\n<i>Heyy you know the [owner of adc], he's a big [simp]</i>", parse_mode = ParseMode.HTML)
       return
     results = requests.get(
         f'https://api.urbandictionary.com/v0/define?term={text}').json()
