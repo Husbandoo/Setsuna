@@ -17,14 +17,13 @@ aiohttp>=2.2.5
 Pillow>=4.2.0
 CurrencyConverter
 #googletrans
-google_trans_new
+google_trans_new==1.1.3
 jikanpy
 speedtest-cli
 coffeehouse
 regex
 bleach
 git+https://github.com/starry69/python-markdown2.git
-git+https://github.com/lushan88a/google_trans_new.git
 wikipedia
 telethon==1.16.4
 spamwatch
