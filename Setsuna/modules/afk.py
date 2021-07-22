@@ -173,10 +173,17 @@ def __gdpr__(user_id):
 
 AFK_HANDLER = DisableAbleCommandHandler("afk", afk)
 AFK_REGEX_HANDLER = MessageHandler(Filters.regex("(?i)brb"), afk)
-NO_AFK_HANDLER = MessageHandler(Filters.all & Filters.chat_type.groups, no_longer_afk)
-AFK_REPLY_HANDLER = MessageHandler(Filters.all & Filters.chat_type.groups, reply_afk)
+NO_AFK_HANDLER = MessageHandler(Filters.all & Filters.groups, no_longer_afk)
+AFK_REPLY_HANDLER = MessageHandler(Filters.all & Filters.groups, reply_afk)
 
 dispatcher.add_handler(AFK_HANDLER, AFK_GROUP)
 dispatcher.add_handler(AFK_REGEX_HANDLER, AFK_GROUP)
 dispatcher.add_handler(NO_AFK_HANDLER, AFK_GROUP)
 dispatcher.add_handler(AFK_REPLY_HANDLER, AFK_REPLY_GROUP)
+
+
+__mod_name__ = "BRB"
+__command_list__ = ["afk"]
+__handlers__ = [(AFK_HANDLER, AFK_GROUP), (AFK_REGEX_HANDLER, AFK_GROUP),
+                (NO_AFK_HANDLER, AFK_GROUP),
+                (AFK_REPLY_HANDLER, AFK_REPLY_GROUP)]
