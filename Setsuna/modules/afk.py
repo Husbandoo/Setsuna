@@ -10,10 +10,36 @@ from Setsuna.modules.sql.afk_redis import start_afk, end_afk, is_user_afk, afk_r
 from Setsuna import REDIS
 from Setsuna.modules.users import get_user_id
 from Setsuna.modules.helper_funcs.alternate import send_message
-from Setsuna.modules.helper_funcs.readable_time import get_readable_time
-
 AFK_GROUP = 7
 AFK_REPLY_GROUP = 8
+
+
+def get_readable_time(seconds: int) -> str:
+    count = 0
+    ping_time = ""
+    time_list = []
+    time_suffix_list = ["s", "m", "h", "days"]
+
+    while count < 4:
+        count += 1
+        if count < 3:
+            remainder, result = divmod(seconds, 60)
+        else:
+            remainder, result = divmod(seconds, 24)
+        if seconds == 0 and remainder == 0:
+            break
+        time_list.append(int(result))
+        seconds = int(remainder)
+
+    for x in range(len(time_list)):
+        time_list[x] = str(time_list[x]) + time_suffix_list[x]
+    if len(time_list) == 4:
+        ping_time += time_list.pop() + ", "
+
+    time_list.reverse()
+    ping_time += ":".join(time_list)
+
+    return ping_time
 
 
 def afk(update, context):
