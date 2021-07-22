@@ -35,3 +35,4 @@ saucenao_api
 random2
 opencv-python-headless 
 telegraph 
+redis

@@ -1,11 +1,11 @@
-from SaitamaRobot.modules.helper_funcs.chat_status import user_admin
-from SaitamaRobot.modules.disable import DisableAbleCommandHandler
+from Setsuna.modules.helper_funcs.chat_status import user_admin
+from Setsuna.modules.disable import DisableAbleCommandHandler
 import os
 import random2 as rdn
 import json
 import requests 
-from SaitamaRobot import dispatcher
-from SaitamaRobot import GIF_API
+from Setsuna import dispatcher
+from Setsuna import GIF_API
 from telegraph import upload_file as nyah
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup
 from telegram import ParseMode, Update

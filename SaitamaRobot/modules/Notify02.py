@@ -1,11 +1,11 @@
 import html
 
-from SaitamaRobot.modules.disable import (DisableAbleCommandHandler, DisableAbleMessageHandler) 
-from SaitamaRobot import (LOGGER, DRAGONS, TIGERS, WOLVES, dispatcher)
-from SaitamaRobot.modules.helper_funcs.chat_status import (user_admin,
+from Setsuna.modules.disable import (DisableAbleCommandHandler, DisableAbleMessageHandler) 
+from Setsuna import (LOGGER, DRAGONS, TIGERS, WOLVES, dispatcher)
+from Setsuna.modules.helper_funcs.chat_status import (user_admin,
                                                            user_not_admin)
-from SaitamaRobot.modules.log_channel import loggable
-from SaitamaRobot.modules.sql import req_channel_sql as sql
+from Setsuna.modules.log_channel import loggable
+from Setsuna.modules.sql import req_channel_sql as sql
 from telegram import (Chat, InlineKeyboardButton, InlineKeyboardMarkup,
                       ParseMode, Update)
 from telegram.error import BadRequest, Unauthorized

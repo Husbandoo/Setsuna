@@ -6,18 +6,18 @@ from telegram.error import BadRequest
 from telegram.ext import CommandHandler, MessageHandler, Filters, run_async
 from telegram.utils.helpers import mention_html
 
-import SaitamaRobot.modules.sql.blacklist_sql as sql
-from SaitamaRobot import dispatcher, LOGGER
-from SaitamaRobot.modules.disable import DisableAbleCommandHandler
-from SaitamaRobot.modules.helper_funcs.chat_status import user_admin, user_not_admin
-from SaitamaRobot.modules.helper_funcs.extraction import extract_text
-from SaitamaRobot.modules.helper_funcs.misc import split_message
-from SaitamaRobot.modules.log_channel import loggable
-from SaitamaRobot.modules.warns import warn
-from SaitamaRobot.modules.helper_funcs.string_handling import extract_time
-from SaitamaRobot.modules.connection import connected
+import Setsuna.modules.sql.blacklist_sql as sql
+from Setsuna import dispatcher, LOGGER
+from Setsuna.modules.disable import DisableAbleCommandHandler
+from Setsuna.modules.helper_funcs.chat_status import user_admin, user_not_admin
+from Setsuna.modules.helper_funcs.extraction import extract_text
+from Setsuna.modules.helper_funcs.misc import split_message
+from Setsuna.modules.log_channel import loggable
+from Setsuna.modules.warns import warn
+from Setsuna.modules.helper_funcs.string_handling import extract_time
+from Setsuna.modules.connection import connected
 
-from SaitamaRobot.modules.helper_funcs.alternate import send_message, typing_action
+from Setsuna.modules.helper_funcs.alternate import send_message, typing_action
 
 BLACKLIST_GROUP = 11
 

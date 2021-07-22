@@ -5,23 +5,23 @@ from telegram import ParseMode, Message
 from telegram.error import BadRequest
 from telegram.ext import CommandHandler, run_async
 
-import SaitamaRobot.modules.sql.notes_sql as sql
-from SaitamaRobot import dispatcher, LOGGER, OWNER_ID, JOIN_LOGGER
-from SaitamaRobot.__main__ import DATA_IMPORT
-from SaitamaRobot.modules.helper_funcs.chat_status import user_admin
-from SaitamaRobot.modules.helper_funcs.alternate import typing_action
+import Setsuna.modules.sql.notes_sql as sql
+from Setsuna import dispatcher, LOGGER, OWNER_ID, JOIN_LOGGER
+from Setsuna.__main__ import DATA_IMPORT
+from Setsuna.modules.helper_funcs.chat_status import user_admin
+from Setsuna.modules.helper_funcs.alternate import typing_action
 
-# from SaitamaRobot.modules.rules import get_rules
-import SaitamaRobot.modules.sql.rules_sql as rulessql
+# from Setsuna.modules.rules import get_rules
+import Setsuna.modules.sql.rules_sql as rulessql
 
-# from SaitamaRobot.modules.sql import warns_sql as warnssql
-import SaitamaRobot.modules.sql.blacklist_sql as blacklistsql
-from SaitamaRobot.modules.sql import disable_sql as disabledsql
+# from Setsuna.modules.sql import warns_sql as warnssql
+import Setsuna.modules.sql.blacklist_sql as blacklistsql
+from Setsuna.modules.sql import disable_sql as disabledsql
 
-# from SaitamaRobot.modules.sql import cust_filters_sql as filtersql
-# import SaitamaRobot.modules.sql.welcome_sql as welcsql
-import SaitamaRobot.modules.sql.locks_sql as locksql
-from SaitamaRobot.modules.connection import connected
+# from Setsuna.modules.sql import cust_filters_sql as filtersql
+# import Setsuna.modules.sql.welcome_sql as welcsql
+import Setsuna.modules.sql.locks_sql as locksql
+from Setsuna.modules.connection import connected
 
 
 @run_async
@@ -335,7 +335,7 @@ def export_data(update, context):
     context.bot.sendDocument(
         current_chat_id,
         document=open("Mai-Sakurajima-Robot{}.backup".format(chat_id), "rb"),
-        caption="*Successfully Exported backup:*\nChat: `{}`\nChat ID: `{}`\nOn: `{}`\n\nNote: This `SaitamaRobot-Backup` was specially made for notes."
+        caption="*Successfully Exported backup:*\nChat: `{}`\nChat ID: `{}`\nOn: `{}`\n\nNote: This `Setsuna-Backup` was specially made for notes."
         .format(chat.title, chat_id, tgl),
         timeout=360,
         reply_to_message_id=msg.message_id,

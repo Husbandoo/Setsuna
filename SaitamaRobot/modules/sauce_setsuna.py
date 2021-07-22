@@ -4,10 +4,10 @@ from jikanpy import Jikan
 import cv2
 from saucenao_api.params import DB
 import os
-from SaitamaRobot import dispatcher 
-from SaitamaRobot import SAUCE_API
-from SaitamaRobot.modules.disable import (DisableAbleCommandHandler, DisableAbleMessageHandler) 
-from SaitamaRobot.modules.helper_funcs.chat_status import (user_admin,
+from Setsuna import dispatcher 
+from Setsuna import SAUCE_API
+from Setsuna.modules.disable import (DisableAbleCommandHandler, DisableAbleMessageHandler) 
+from Setsuna.modules.helper_funcs.chat_status import (user_admin,
                                                            user_not_admin)
 from telegram import (Chat, InlineKeyboardButton, InlineKeyboardMarkup,
                       ParseMode, Update)

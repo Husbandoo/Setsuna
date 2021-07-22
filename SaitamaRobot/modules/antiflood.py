@@ -1,21 +1,21 @@
 import html
 from typing import Optional, List
-import SaitamaRobot.modules.sql.approve_sql as sql2
+import Setsuna.modules.sql.approve_sql as sql2
 from telegram import Message, Chat, Update, User, ChatPermissions
 
-from SaitamaRobot import TIGERS, WOLVES, dispatcher
-from SaitamaRobot.modules.helper_funcs.chat_status import (bot_admin,
+from Setsuna import TIGERS, WOLVES, dispatcher
+from Setsuna.modules.helper_funcs.chat_status import (bot_admin,
                                                            is_user_admin,
                                                            user_admin,
                                                            user_admin_no_reply)
-from SaitamaRobot.modules.log_channel import loggable
-from SaitamaRobot.modules.sql import antiflood_sql as sql
+from Setsuna.modules.log_channel import loggable
+from Setsuna.modules.sql import antiflood_sql as sql
 from telegram.error import BadRequest
 from telegram.ext import CallbackContext, CallbackQueryHandler, CommandHandler, Filters, MessageHandler, run_async
 from telegram.utils.helpers import mention_html, escape_markdown
-from SaitamaRobot.modules.helper_funcs.string_handling import extract_time
-from SaitamaRobot.modules.connection import connected
-from SaitamaRobot.modules.helper_funcs.alternate import send_message
+from Setsuna.modules.helper_funcs.string_handling import extract_time
+from Setsuna.modules.connection import connected
+from Setsuna.modules.helper_funcs.alternate import send_message
 FLOOD_GROUP = 3
 
 

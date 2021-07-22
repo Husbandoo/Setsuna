@@ -2,11 +2,11 @@ import html
 import random
 import time
 import nekos
-import SaitamaRobot.modules.fun_strings as fun_strings
-from SaitamaRobot import dispatcher
-from SaitamaRobot.modules.disable import DisableAbleCommandHandler
-from SaitamaRobot.modules.helper_funcs.chat_status import is_user_admin
-from SaitamaRobot.modules.helper_funcs.extraction import extract_user
+import Setsuna.modules.fun_strings as fun_strings
+from Setsuna import dispatcher
+from Setsuna.modules.disable import DisableAbleCommandHandler
+from Setsuna.modules.helper_funcs.chat_status import is_user_admin
+from Setsuna.modules.helper_funcs.extraction import extract_user
 from telegram import ChatPermissions, ParseMode, Update
 from telegram.error import BadRequest
 from telegram.ext import CallbackContext, run_async

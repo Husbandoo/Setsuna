@@ -6,7 +6,7 @@ import random
 import re
 import subprocess
 import requests as r
-from SaitamaRobot import dispatcher 
+from Setsuna import dispatcher 
 
 from telegram.error import BadRequest
 from telegram.ext import CommandHandler, Filters, run_async, MessageHandler 
