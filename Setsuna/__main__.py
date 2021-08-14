@@ -207,7 +207,7 @@ def start(update: Update, context: CallbackContext):
                              url=f"https://t.me/{SUPPORT_CHAT}"),
                          InlineKeyboardButton(
                              text="🔗 Source 🔗",
-                             url="https://t.me/biriyanikhaa ")
+                             url="https://github.com/Zack-Bloodshot/Setsuna")
                      ],
                      [   
                         InlineKeyboardButton(
@@ -263,7 +263,7 @@ def help_button(update, context):
     next_match = re.match(r"help_next\((.+?)\)", query.data)
     back_match = re.match(r"help_back", query.data)
 
-    print(query.message.chat.id)
+    print(f'{query.message.chat.id}: sent data {query.data}')
 
     try:
         if mod_match:
