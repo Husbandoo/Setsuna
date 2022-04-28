@@ -145,12 +145,14 @@ def check_afk(update, context, user_id, fst_name, userc_id):
             if int(userc_id) == int(user_id):
                 return
             res = "*{}* is AFK!\nSince: `{}`".format(fst_name, since_afk)
-            update.effective_message.reply_text(res, parse_mode=ParseMode.MARKDOWN)
+            m = update.effective_message.reply_text(res, parse_mode=ParseMode.MARKDOWN)
         else:
             if int(userc_id) == int(user_id):
                 return
             res = "*{}* is AFK!\nSays it's because of:\n`{}`\nSince: `{}`".format(fst_name, reason, since_afk)
-            update.effective_message.reply_text(res, parse_mode=ParseMode.MARKDOWN)
+            m = update.effective_message.reply_text(res, parse_mode=ParseMode.MARKDOWN)
+    time.sleep(3)
+    m.delete()
 
 
 def __user_info__(user_id):
