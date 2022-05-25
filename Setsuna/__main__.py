@@ -51,7 +51,6 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """
-────「 [Aharen Reina](https://aharensan-wa-hakarenai.fandom.com/wiki/Reina_Aharen) 」────
 *やあ! Hello {} My Darling ,
 I'm An Anime Themed Multi-Featured & Advanced Group Management Bot To Manage Your Group.*
 
@@ -203,22 +202,25 @@ def start(update: Update, context: CallbackContext):
                 reply_markup=InlineKeyboardMarkup(
                     [[
                         InlineKeyboardButton(
-                            text="☑️ Add Setsuna to your group",
+                            text="➕ Add Aharen To Your Group ➕",
                             url="t.me/{}?startgroup=true".format(
                                 context.bot.username))
                     ],
                      [
                          InlineKeyboardButton(
-                             text="🚨 Support 🚨",
-                             url=f"https://t.me/{SUPPORT_CHAT}"),
+                             text="[Eldorado]",
+                             url=f"https://t.me/Eldoradoo"),
                          InlineKeyboardButton(
-                             text="🔗 Source 🔗",
-                             url="https://github.com/Zack-Bloodshot/Setsuna")
+                             text="Chat",
+                             url="https://t.me/AnimeChatFrozen")
+                         InlineKeyboardButton(
+                           text="Source"
+                           url="")
                      ],
                      [   
                         InlineKeyboardButton(
-                             text="Help! ", 
-                             callback_data="help_back" ) 
+                             text="Support", 
+                             url="https://t.me/NexusXSupport") 
                        
                     ]]))
                   
