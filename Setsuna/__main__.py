@@ -80,12 +80,12 @@ And the following:
     dispatcher.bot.first_name, ""
     if not ALLOW_EXCL else "\nAll commands can either be used with / or !.\n")
 
-SAITAMA_IMG = "https://telegra.ph/file/7c9519a493f3b28a88b55.jpg"
+SAITAMA_IMG = "https://telegra.ph/file/5baadbe21aa7fc89e9fce.mp4"
 
 DONATE_STRING = """Heya, glad to hear you want to donate!
 
 You can donate to the original writer of the Base code, Paul
-There are two ways of supporting him; [PayPal](paypal.me/PaulSonOfLars), or [Monzo](monzo.me/paulnionvestergaardlarsen)."""
+There are two ways of supporting him; [Husbando](https://t.me/Husbandoo), or [Nexus](http://t.me/teamnexusx)."""
 
 IMPORTED = {}
 MIGRATEABLE = []
