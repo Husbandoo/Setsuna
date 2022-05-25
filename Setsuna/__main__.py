@@ -52,8 +52,10 @@ def get_readable_time(seconds: int) -> str:
 
 PM_START_TEXT = """
 ────「 [Aharen Reina](https://aharensan-wa-hakarenai.fandom.com/wiki/Reina_Aharen) 」────
-Hi {}, my name is Setsuna ! Nyah! 
-I am an Anime themed group management bot. You can find my list of available commands with /help Nyah! 
+*やあ! Hello {} My Darling ,
+I'm An Anime Themed Multi-Featured & Advanced Group Management Bot To Manage Your Group.*
+
+
 """
 
 HELP_STRINGS = """
