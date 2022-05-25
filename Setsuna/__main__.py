@@ -207,21 +207,17 @@ def start(update: Update, context: CallbackContext):
                                 context.bot.username))
                     ],
                      [
-                         InlineKeyboardButton(
-                             text="[Eldorado]",
-                             url=f"https://t.me/Eldoradoo"),
-                         InlineKeyboardButton(
-                             text="Chat",
-                             url="https://t.me/AnimeChatFrozen")
-                         InlineKeyboardButton(
-                           text="Source"
-                           url="")
+                        InlineKeyboardButton(text="[Eldorado]", url="https://t.me/Eldoradoo"),
+                        InlineKeyboardButton(text="Chat", url="https://t.me/AnimeChatFrozen"),
+                        InlineKeyboardButton(text="[Source]" , url="https://t.me/NexusXSupport/12582"),
                      ],
                      [   
                         InlineKeyboardButton(
                              text="Support", 
-                             url="https://t.me/NexusXSupport") 
-                       
+                             url=f"https://t.me/NexusXSupport"),
+                        InlineKeyboardButton(
+                             text="Updates",
+                             url="http://t.me/TeamNexusX") 
                     ]]))
                   
                     
