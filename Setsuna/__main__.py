@@ -56,6 +56,7 @@ I am an Anime themed group management bot. You can find my list of available com
 """
 
 HELP_STRINGS = """
+────「 [Aharen Reina](https://aharensan-wa-hakarenai.fandom.com/wiki/Reina_Aharen) 」────
 Hey there! My name is *{}*.
 I help admins manage their groups with a Nyah! 
 
